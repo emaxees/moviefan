@@ -40,6 +40,10 @@ const Home = () => (
       .hero {
         width: 100%;
         color: #333;
+
+        & h1 {
+          color: red;
+        }
       }
       .title {
         margin: 0;
