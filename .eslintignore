@@ -1,0 +1,7 @@
+/.next/
+/.storybook/
+/node_modules/
+/ops/
+/static/
+/out/
+/.env
