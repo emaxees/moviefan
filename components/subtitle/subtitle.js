@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Title = ({ children, ...rest }) => (
-  <h1 {...rest}>
+  <h2 {...rest}>
     {children}
     <style jsx>
       {`
-        h1 {
-          color: var(--global-font-color-white);
+        h2 {
+          color: var(--global-font-color-grey);
           text-transform: uppercase;
           font-weight: bold;
         }
       `}
     </style>
-  </h1>
+  </h2>
 );
 
 Title.propTypes = {
