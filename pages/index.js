@@ -1,54 +1,56 @@
-import React from 'react';
-import Head from 'next/head';
-import { Nav, Title } from 'components';
-
+import React from "react";
+import Head from "next/head";
+import { Nav, Title, Subtitle } from "components";
 
 const Home = () => (
-    <div>
-        <Head>
-            <title>Home</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <Nav />
-
-        <div className="hero">
-            <h1 className="title">Welcome to Next.js!</h1>
-            <p className="description">
+  <div>
+    <Head>
+      <title>Home</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Nav />
+    <div className="hero">
+      <h1 className="title">Welcome to Next.js!</h1>
+      <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
-            </p>
-
-            <div className="row">
-                <a href="https://nextjs.org/docs" className="card">
-                    <h3>Documentation &rarr;</h3>
-                    <p>Learn more about Next.js in the documentation.</p>
-                </a>
-                <a href="https://nextjs.org/learn" className="card">
-                    <h3>Next.js Learn &rarr;</h3>
-                    <p>Learn about Next.js by following an interactive tutorial!</p>
-                </a>
-                <a
-                    href="https://github.com/zeit/next.js/tree/master/examples"
-                    className="card"
-                >
-                    <h3>Examples &rarr;</h3>
-                    <p>Find other example boilerplates on the Next.js GitHub.</p>
-                </a>
-            </div>
-            <Title>Wrath of the titans</Title>
-        </div>
-        <style jsx global>
-            {`
+      </p>
+      <div className="row">
+        <a href="https://nextjs.org/docs" className="card">
+          <h3>Documentation &rarr;</h3>
+          <p>Learn more about Next.js in the documentation.</p>
+        </a>
+        <a href="https://nextjs.org/learn" className="card">
+          <h3>Next.js Learn &rarr;</h3>
+          <p>Learn about Next.js by following an interactive tutorial!</p>
+        </a>
+        <a
+          href="https://github.com/zeit/next.js/tree/master/examples"
+          className="card"
+        >
+          <h3>Examples &rarr;</h3>
+          <p>Find other example boilerplates on the Next.js GitHub.</p>
+        </a>
+      </div>
+      <Title>Wrath of the titans</Title>
+      <Subtitle>THEMOVIEBOX</Subtitle>
+    </div>
+    <style jsx global>
+      {`
         @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
         :root {
           /* Font Sizes */
-          --font-size--xs: 0.8rem;
-          --font-size--sm: 1rem;
-          --font-size--md: 1.8rem;
-          --font-size--lg: 2.8rem;
-          --font-size--xl: 4.6rem;
+          --global-font-size-xs: 0.8rem;
+          --global-font-size-sm: 1rem;
+          --global-font-size-md: 1.8rem;
+          --global-font-size-lg: 2.8rem;
+          --global-font-size-xl: 4.6rem;
 
+          /* Font Colors */
+          --global-font-color-grey: #494c62;
+          --global-font-color-white: #ffffff;
+
+          /* Other Vars* */
           --global-font-family: "Roboto", sans-serif;
         }
         body {
@@ -76,12 +78,15 @@ const Home = () => (
           font-size: 13px;
         }
         h1 {
-          font-size: var(--font-size--xl);
+          font-size: var(--global-font-size-xl);
+        }
+        h2 {
+          font-size: var(--global-font-size-lg);
         }
       `}
-        </style>
-        <style jsx>
-            {`
+    </style>
+    <style jsx>
+      {`
         .hero {
           width: 100%;
           color: #333;
@@ -131,8 +136,8 @@ const Home = () => (
           color: #333;
         }
       `}
-        </style>
-    </div>
+    </style>
+  </div>
 );
 
 export default Home;
