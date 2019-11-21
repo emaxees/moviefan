@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Title = ({ children, ...rest }) => (
   <h2 {...rest}>
@@ -7,7 +7,7 @@ const Title = ({ children, ...rest }) => (
     <style jsx>
       {`
         h2 {
-          color: var(--global-font-color-grey);
+          color: var(--global-color-grey);
           text-transform: uppercase;
           font-weight: bold;
         }
