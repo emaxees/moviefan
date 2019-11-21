@@ -1,6 +1,10 @@
-import React from "react";
-import Head from "next/head";
-import { Nav, Title, Subtitle } from "components";
+import React from 'react';
+import Head from 'next/head';
+import { Nav, Title, Subtitle, Button } from 'components';
+
+const clickHandler = e => {
+  console.log(`Click on ${e.target.textContent}`);
+};
 
 const Home = () => (
   <div>
@@ -33,10 +37,25 @@ const Home = () => (
       </div>
       <Title>Wrath of the titans</Title>
       <Subtitle>THEMOVIEBOX</Subtitle>
+      <Button theme="transparent" onClick={clickHandler}>
+        Login
+      </Button>
+      <Button theme="pink" onClick={clickHandler}>
+        Sign Up
+      </Button>
+      <Button theme="pink" onClick={clickHandler}>
+        Watch Movie
+      </Button>
+      <Button theme="light" onClick={clickHandler}>
+        View Info
+      </Button>
+      <Button theme="transparent" onClick={clickHandler}>
+        + Add to Wishlist
+      </Button>
     </div>
     <style jsx global>
       {`
-        @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
         :root {
           /* Font Sizes */
@@ -46,12 +65,11 @@ const Home = () => (
           --global-font-size-lg: 2.8rem;
           --global-font-size-xl: 4.6rem;
 
-          /* Font Colors */
-          --global-font-color-grey: #494c62;
-          --global-font-color-white: #ffffff;
-
-          /* Other Vars* */
-          --global-font-family: "Roboto", sans-serif;
+          /* Colors */
+          --global-color-pink: #ff0079;
+          --global-color-grey: #494c62;
+          --global-color-white: #ffffff;
+          --global-font-family: 'Roboto', sans-serif;
         }
         body {
           background-color: #333;
