@@ -1,28 +1,51 @@
 import React from 'react';
 import Link from 'next/link';
-
-const links = [
-    { href: 'https://zeit.co/now', label: 'ZEIT' },
-    { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map((link) => ({
-    ...link,
-    key: `nav-link-${link.href}-${link.label}`,
-}));
+import { Button } from 'components';
 
 const Nav = () => (
     <nav>
+        <Link href="/">
+            <h2>The movie box</h2>
+        </Link>
         <ul>
             <li>
-                <Link href="/">
-                    <a>Home</a>
+                <img src="/images/find.svg" alt="find" />
+            </li>
+            <li>
+                <Link href="/login">
+                    <a>
+                        <Button theme="transparent">Login</Button>
+                    </a>
                 </Link>
             </li>
-            {links.map(({ key, href, label }) => (
-                <li key={key}>
-                    <a href={href}>{label}</a>
-                </li>
-            ))}
+            <li>
+                <Link href="/signup">
+                    <a>
+                        <Button theme="pink">Sign Up</Button>
+                    </a>
+                </Link>
+            </li>
         </ul>
+        <style jsx>
+            {`
+        nav {
+          display: flex;
+          justify-content: space-between;
+        }
+        nav h2 {
+          text-transform: uppercase;
+          color: white;
+          word-spacing: -10px;
+        }
+        nav ul {
+          display: flex;
+          align-items: center;
+        }
+        nav ul li img {
+          width: 20px;
+        }
+      `}
+        </style>
     </nav>
 );
 
