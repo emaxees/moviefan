@@ -4,16 +4,16 @@ import Head from 'next/head';
 import { Nav } from 'components';
 
 const Layout = ({ children }) => (
-  <div>
-    <Head>
-      <title>The Movie Box</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
     <div>
-      <Nav />
-      {children}
-      <style jsx global>
-        {`
+        <Head>
+            <title>The Movie Box</title>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div>
+            <Nav />
+            {children}
+            <style jsx global>
+                {`
           /* RESET */
           html,
           body,
@@ -374,13 +374,13 @@ const Layout = ({ children }) => (
             box-sizing: border-box;
           }
         `}
-      </style>
+            </style>
+        </div>
     </div>
-  </div>
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default Layout;
