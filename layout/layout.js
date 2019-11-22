@@ -9,7 +9,7 @@ const Layout = ({ children }) => (
       <title>The Movie Box</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className="container">
+    <div>
       <Nav />
       {children}
       <style jsx global>
@@ -326,10 +326,6 @@ const Layout = ({ children }) => (
 
           @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-          .container {
-            margin: 0 5rem;
-          }
-
           :root {
             --global-font-size-xs: 0.8rem;
             --global-font-size-sm: 1rem;
@@ -371,6 +367,11 @@ const Layout = ({ children }) => (
           }
           h2 {
             font-size: var(--global-font-size-lg);
+          }
+
+          .global-padding {
+            padding: 0 2rem;
+            box-sizing: border-box;
           }
         `}
       </style>
