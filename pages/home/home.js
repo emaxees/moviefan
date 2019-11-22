@@ -1,9 +1,5 @@
 import React from 'react';
-
-import {
-    Title, Subtitle, Button, Nav,
-} from 'components';
-import Head from 'next/head';
+import { Title, Subtitle, Button } from 'components';
 
 const clickHandler = (e) => {
     console.log(`Click on ${e.target.textContent}`);
@@ -11,11 +7,6 @@ const clickHandler = (e) => {
 
 const Home = () => (
     <div>
-        <Head>
-            <title>Home</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Nav />
         <div className="hero">
             <h1 className="title">Welcome to Next.js!</h1>
             <p className="description">
