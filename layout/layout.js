@@ -4,16 +4,16 @@ import Head from 'next/head';
 import { Nav } from 'components';
 
 const Layout = ({ children }) => (
-    <div>
-        <Head>
-            <title>The Movie Box</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div className="container">
-            <Nav />
-            {children}
-            <style jsx global>
-                {`
+  <div>
+    <Head>
+      <title>The Movie Box</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <div className="container">
+      <Nav />
+      {children}
+      <style jsx global>
+        {`
           /* RESET */
           html,
           body,
@@ -373,13 +373,13 @@ const Layout = ({ children }) => (
             font-size: var(--global-font-size-lg);
           }
         `}
-            </style>
-        </div>
+      </style>
     </div>
+  </div>
 );
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

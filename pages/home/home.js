@@ -1,48 +1,48 @@
 import React from 'react';
 import { Title, Subtitle, Button } from 'components';
 
-const clickHandler = (e) => {
-    console.log(`Click on ${e.target.textContent}`);
+const clickHandler = e => {
+  console.log(`Click on ${e.target.textContent}`);
 };
 
 const Home = () => (
-    <div>
-        <div className="hero">
-            <h1 className="title">Welcome to Next.js!</h1>
-            <p className="description">
+  <div>
+    <div className="hero">
+      <h1 className="title">Welcome to Next.js!</h1>
+      <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
-            </p>
-            <div className="row">
-                <a href="https://nextjs.org/docs" className="card">
-                    <h3>Documentation &rarr;</h3>
-                    <p>Learn more about Next.js in the documentation.</p>
-                </a>
-                <a href="https://nextjs.org/learn" className="card">
-                    <h3>Next.js Learn &rarr;</h3>
-                    <p>Learn about Next.js by following an interactive tutorial!</p>
-                </a>
-                <a
-                    href="https://github.com/zeit/next.js/tree/master/examples"
-                    className="card"
-                >
-                    <h3>Examples &rarr;</h3>
-                    <p>Find other example boilerplates on the Next.js GitHub.</p>
-                </a>
-            </div>
-            <Title>Wrath of the titans</Title>
-            <Subtitle>THEMOVIEBOX</Subtitle>
-            <Button theme="pink" onClick={clickHandler}>
+      </p>
+      <div className="row">
+        <a href="https://nextjs.org/docs" className="card">
+          <h3>Documentation &rarr;</h3>
+          <p>Learn more about Next.js in the documentation.</p>
+        </a>
+        <a href="https://nextjs.org/learn" className="card">
+          <h3>Next.js Learn &rarr;</h3>
+          <p>Learn about Next.js by following an interactive tutorial!</p>
+        </a>
+        <a
+          href="https://github.com/zeit/next.js/tree/master/examples"
+          className="card"
+        >
+          <h3>Examples &rarr;</h3>
+          <p>Find other example boilerplates on the Next.js GitHub.</p>
+        </a>
+      </div>
+      <Title>Wrath of the titans</Title>
+      <Subtitle>THEMOVIEBOX</Subtitle>
+      <Button theme="pink" onClick={clickHandler}>
         Watch Movie
-            </Button>
-            <Button theme="light" onClick={clickHandler}>
+      </Button>
+      <Button theme="light" onClick={clickHandler}>
         View Info
-            </Button>
-            <Button theme="transparent" onClick={clickHandler}>
+      </Button>
+      <Button theme="transparent" onClick={clickHandler}>
         + Add to Wishlist
-            </Button>
-        </div>
-        <style jsx>
-            {`
+      </Button>
+    </div>
+    <style jsx>
+      {`
         .hero {
           width: 100%;
           color: #333;
@@ -92,8 +92,8 @@ const Home = () => (
           color: #333;
         }
       `}
-        </style>
-    </div>
+    </style>
+  </div>
 );
 
 export default Home;
