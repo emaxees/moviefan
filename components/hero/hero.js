@@ -2,7 +2,7 @@ import React from 'react';
 import { Title, Button } from 'components';
 
 const clickHandler = (e) => {
-    console.log(`Click on ${e.target.textContent}`);
+    window.console.log(`Click on ${e.target.textContent}`);
 };
 
 const Hero = ({ ...rest }) => (

@@ -335,11 +335,12 @@ const Layout = ({ children }) => (
 
             --global-color-pink: #ff0079;
             --global-color-grey: #494c62;
+            --global-color-grey-soft: #babbc3;
+            --global-color-grey-dark: #494c62;
             --global-color-white: #ffffff;
             --global-font-family: 'Roboto', sans-serif;
           }
           body {
-            background-color: #333;
             margin: 0;
             font-family: var(--global-font-family);
           }
@@ -370,7 +371,7 @@ const Layout = ({ children }) => (
           }
 
           .global-padding {
-            padding: 0 2rem;
+            padding: 0 4rem;
             box-sizing: border-box;
           }
         `}
