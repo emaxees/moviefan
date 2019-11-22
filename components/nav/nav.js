@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from 'components';
 
 const Nav = () => (
-    <nav>
+    <nav className="global-padding">
         <Link href="/">
             <h2>The movie box</h2>
         </Link>
@@ -29,8 +29,12 @@ const Nav = () => (
         <style jsx>
             {`
         nav {
+          position: absolute;
           display: flex;
+          flex-direction: row;
           justify-content: space-between;
+          align-items: center;
+          width: 100%;
         }
         nav h2 {
           text-transform: uppercase;
