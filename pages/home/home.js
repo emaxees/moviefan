@@ -1,75 +1,58 @@
-import React from 'react';
-import { Hero, Subtitle, Card } from 'components';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchMovie } from 'core/store/thunks';
+import { Hero, Card } from 'components';
+import PropTypes from 'prop-types';
 
-const cards = [
-    {
-        name: 'logan',
-        image: '0.jpg',
-        year: '2017',
-        genres: 'action, adventure, fantasy',
-        valoration: '5.0',
-    },
-    {
-        name: 'logan',
-        image: '0.jpg',
-        year: '2017',
-        genres: 'action, adventure, fantasy',
-        valoration: '5.0',
-    },
-    {
-        name: 'logan',
-        image: '0.jpg',
-        year: '2017',
-        genres: 'action, adventure, fantasy',
-        valoration: '5.0',
-    },
-    {
-        name: 'logan',
-        image: '0.jpg',
-        year: '2017',
-        genres: 'action, adventure, fantasy',
-        valoration: '5.0',
-    },
-    {
-        name: 'logan',
-        image: '0.jpg',
-        year: '2017',
-        genres: 'action, adventure, fantasy',
-        valoration: '5.0',
-    },
-    {
-        name: 'logan',
-        image: '0.jpg',
-        year: '2017',
-        genres: 'action, adventure, fantasy',
-        valoration: '5.0',
-    },
-].map((card) => (
-    <Card
-        name={card.name}
-        image={card.image}
-        year={card.year}
-        genres={card.genres}
-        valoration={card.valoration}
-        key={`key-${card.name}-${card.year}`}
-    />
-));
+const Home = ({ movies, fetchMovie }) => {
+    useEffect(() => {
+        const movieName = 'adventure';
+        const resource = `?s=${movieName}&apiKey=`;
+        fetchMovie(resource);
+    }, []);
 
-const Home = () => (
-    <div>
-        <Hero />
-        <div className="container global-padding">{cards}</div>
-        <Subtitle>THEMOVIEBOX</Subtitle>
-        <style jsx>
-            {`
-        .container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-        }
+    const renderMovies = movies.map((movie) => (
+        <Card
+            name={movie.Title}
+            year={movie.Year}
+            image={movie.Poster}
+            genres={movie.Type}
+            valoration="5.0"
+            key={movie.imdbID}
+        />
+    ));
+
+    return (
+        <div>
+            <Hero />
+            <div className="container global-padding">
+                {renderMovies}
+            </div>
+            <style jsx>
+                {`
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: var(--global-color-grey-light);
+  }
       `}
-        </style>
-    </div>
-);
+            </style>
+        </div>
+    );
+};
 
-export default Home;
+Home.propTypes = {
+    movies: PropTypes.arrayOf(PropTypes.object),
+    fetchMovie: PropTypes.func.isRequired,
+};
+
+export default connect(
+    (state) => ({
+        movies: state.movies.movies,
+    }),
+    (dispatch) => bindActionCreators({
+        fetchMovie,
+    }, dispatch),
+)(Home);
