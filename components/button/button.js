@@ -7,7 +7,7 @@ const Button = ({ children, onClick, theme }) => (
         <style jsx>
             {`
         button {
-          color: white;
+          color: var(--global-color-white);
           background-color: transparent;
           border-radius: 3px;
           min-width: 100px;
@@ -17,17 +17,13 @@ const Button = ({ children, onClick, theme }) => (
           text-transform: uppercase;
           font-size: var(--font-size--sm);
           padding: 10px 40px;
-
-          & :focus {
-            outline: 0;
-          }
         }
         .pink {
           background-color: var(--global-color-pink);
           border: none;
         }
         .light {
-          border: 1px solid white;
+          border: 1px solid color var(--global-color-white);
         }
 
         .transparent {
