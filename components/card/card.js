@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Card = ({
     name, image, year, genres, valoration,
-}, ...rest) => (
-    <div className="container" {...rest}>
+}) => (
+    <div className="container">
         <div className="image-container">
             <span>{year}</span>
         </div>
@@ -26,6 +26,7 @@ const Card = ({
           margin: 1rem;
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
           cursor: pointer;
+          background-color: var(--global-color-white);
 
           &:hover {
             opacity: 0.9;
@@ -37,9 +38,9 @@ const Card = ({
           width: 100%;
           height: 85%;
           position: relative;
-          background: url(images/cards/${image}) no-repeat;
+          background: url(${image}) no-repeat;
           background-size: cover;
-          background-position: left bottom;
+          background-position: 50%;
 
           & span {
             position: absolute;
@@ -84,9 +85,9 @@ const Card = ({
 );
 
 Card.propTypes = {
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    year: PropTypes.string,
     genres: PropTypes.string,
     valoration: PropTypes.string,
 };

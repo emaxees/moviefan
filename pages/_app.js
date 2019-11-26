@@ -1,4 +1,7 @@
 import React from 'react';
+import withRedux from 'next-redux-wrapper';
+import { Provider } from 'react-redux';
+import makeStore from 'core/store';
 import App from 'next/app';
 import Layout from 'layout';
 
@@ -11,13 +14,15 @@ class MyApp extends App {
     }
 
     render() {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps, store } = this.props;
         return (
-            <Layout {...pageProps}>
-                <Component {...pageProps} />
-            </Layout>
+            <Provider store={store}>
+                <Layout {...pageProps}>
+                    <Component {...pageProps} />
+                </Layout>
+            </Provider>
         );
     }
 }
 
-export default MyApp;
+export default withRedux(makeStore)(MyApp);

@@ -38,7 +38,7 @@ const Nav = () => (
         }
         nav h2 {
           text-transform: uppercase;
-          color: white;
+          color: var(--global-color-white);
           word-spacing: -10px;
         }
         nav ul {
