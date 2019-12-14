@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ children, onClick, theme }) => (
-    <button onClick={onClick} className={theme}>
-        {children}
-        <style jsx>
-            {`
+  <button onClick={onClick} className={theme}>
+    {children}
+    <style jsx>
+      {`
         button {
           color: var(--global-color-white);
           background-color: transparent;
@@ -30,18 +30,18 @@ const Button = ({ children, onClick, theme }) => (
           border: none;
         }
       `}
-        </style>
-    </button>
+    </style>
+  </button>
 );
 
 Button.propTypes = {
-    children: PropTypes.node.isRequired,
-    onClick: PropTypes.func,
-    theme: PropTypes.oneOf(['light', 'transparent', 'pink']),
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+  theme: PropTypes.oneOf(['light', 'transparent', 'pink'])
 };
 
 Button.defaultProps = {
-    theme: 'light',
+  theme: 'light'
 };
 
 export default Button;

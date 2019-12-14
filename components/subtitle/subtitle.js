@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ children, ...rest }) => (
+const Subtitle = ({ children, ...rest }) => (
     <h2 {...rest}>
         {children}
         <style jsx>
             {`
-        h2 {
-          color: var(--global-color-grey);
-          text-transform: uppercase;
-          font-weight: bold;
-        }
-      `}
+            h2 {
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+          `}
         </style>
     </h2>
 );
 
-Title.propTypes = {
+Subtitle.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export default Title;
+export default Subtitle;

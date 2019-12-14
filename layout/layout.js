@@ -2,20 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { Nav, Footer } from 'components';
+import { ScreenClassProvider } from 'react-grid-system';
 
 const Layout = ({ children }) => (
-    <div>
-        <Head>
-            <title>The Movie Box</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <div>
-            <Nav />
-            {children}
-            <Footer />
-        </div>
-        <style jsx global>
-            {`
+  <div>
+    <Head>
+      <title>The Movie Box</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+      <ScreenClassProvider>
+      <Nav />
+      {children}
+      <Footer />
+    </ScreenClassProvider>
+    <style jsx global>
+      {`
         /* RESET */
         html,
         body,
@@ -344,7 +345,6 @@ const Layout = ({ children }) => (
           --global-font-family: 'Roboto', sans-serif;
         }
         body {
-          margin: 0;
           font-family: var(--global-font-family);
         }
         nav {
@@ -372,18 +372,13 @@ const Layout = ({ children }) => (
         h2 {
           font-size: var(--global-font-size-lg);
         }
-
-        .global-padding {
-          padding: 0 4rem;
-          box-sizing: border-box;
-        }
       `}
-        </style>
-    </div>
+    </style>
+  </div>
 );
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;
