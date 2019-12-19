@@ -6,43 +6,30 @@ import {
 } from 'react-grid-system';
 
 const Nav = () => (
-    <div className="root">
-        <Container fluid>
-            <Row align="center">
-                <Col lg={10} xl={8}>
-                    <Link href="/">
-                        <Subtitle className="title">The movie box</Subtitle>
+    <Container fluid style={{ position: 'absolute', width: '100%', top: '1rem' }}>
+        <Row align="center" justify="between">
+            <Col xs={10} lg={6}>
+                <Link href="/">
+                    <Subtitle style={{ color: 'white' }}>The movie box</Subtitle>
+                </Link>
+            </Col>
+            <Visible lg xl>
+                <Col lg={6} align="end">
+                    <img src="/images/find.svg" alt="find" />
+                    <Link href="/login">
+                        <a>
+                            <Button theme="transparent">Login</Button>
+                        </a>
+                    </Link>
+                    <Link href="/signup">
+                        <a>
+                            <Button theme="pink">Sign Up</Button>
+                        </a>
                     </Link>
                 </Col>
-                <Visible xl>
-                    <Col xl={4}>
-                        <img src="/images/find.svg" alt="find" />
-                        <Link href="/login">
-                            <a>
-                                <Button theme="transparent">Login</Button>
-                            </a>
-                        </Link>
-                        <Link href="/signup">
-                            <a>
-                                <Button theme="pink">Sign Up</Button>
-                            </a>
-                        </Link>
-                    </Col>
-                </Visible>
-            </Row>
-        </Container>
-        <style jsx>{`
-            .root {
-                position: absolute;
-                width: 100%;
-
-            }
-            .title {
-                color: red;
-            }
-        `}
-        </style>
-    </div>
+            </Visible>
+        </Row>
+    </Container>
 );
 
 export default Nav;
