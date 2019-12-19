@@ -5,18 +5,18 @@ import { Nav, Footer } from 'components';
 import { ScreenClassProvider } from 'react-grid-system';
 
 const Layout = ({ children }) => (
-  <div>
-    <Head>
-      <title>The Movie Box</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-      <ScreenClassProvider>
-      <Nav />
-      {children}
-      <Footer />
-    </ScreenClassProvider>
-    <style jsx global>
-      {`
+    <div>
+        <Head>
+            <title>The Movie Box</title>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <ScreenClassProvider>
+            <Nav />
+            {children}
+            <Footer />
+        </ScreenClassProvider>
+        <style jsx global>
+            {`
         /* RESET */
         html,
         body,
@@ -373,12 +373,12 @@ const Layout = ({ children }) => (
           font-size: var(--global-font-size-lg);
         }
       `}
-    </style>
-  </div>
+        </style>
+    </div>
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default Layout;

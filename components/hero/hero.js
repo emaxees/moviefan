@@ -1,26 +1,26 @@
 import React from 'react';
 import { Title, Button } from 'components';
 
-const clickHandler = e => {
-  window.console.log(`Click on ${e.target.textContent}`);
+const clickHandler = (e) => {
+    window.console.log(`Click on ${e.target.textContent}`);
 };
 
 const Hero = ({ ...rest }) => (
-  <div className="hero" {...rest}>
-    <div className="container">
-      <Title>Wrath of the titans</Title>
-      <Button theme="pink" onClick={clickHandler}>
+    <div className="hero" {...rest}>
+        <div className="container">
+            <Title>Wrath of the titans</Title>
+            <Button theme="pink" onClick={clickHandler}>
         Watch Movie
-      </Button>
-      <Button theme="light" onClick={clickHandler}>
+            </Button>
+            <Button theme="light" onClick={clickHandler}>
         View Info
-      </Button>
-      <Button theme="transparent" onClick={clickHandler}>
+            </Button>
+            <Button theme="transparent" onClick={clickHandler}>
         + Add to Wishlist
-      </Button>
-    </div>
-    <style jsx>
-      {`
+            </Button>
+        </div>
+        <style jsx>
+            {`
         .hero {
           width: 100%;
           height: 50rem;
@@ -35,8 +35,8 @@ const Hero = ({ ...rest }) => (
           margin-bottom: 4rem;
         }
       `}
-    </style>
-  </div>
+        </style>
+    </div>
 );
 
 export default Hero;
