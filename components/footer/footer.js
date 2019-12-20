@@ -1,53 +1,58 @@
 import React from 'react';
 import { Subtitle } from 'components';
 import Link from 'next/link';
-import {
-  Container, Row, Col, Visible,
-} from 'react-grid-system';
-
+import { Container, Row, Col } from 'react-grid-system';
 
 const containerStyles = {
     padding: '2rem 4rem',
     color: '#494c62',
-  };
+    backgroundColor: '#fff00'
+};
 
 const Footer = () => (
     <Container fluid style={containerStyles}>
         <Row>
-            <Col lg={6}>
+            <Col lg={9}>
                 <Subtitle>THE MOVIE BOX</Subtitle>
             </Col>
-            <Col lg={6}>
-                <Row justify="end">
-                    <span>About</span>
-                    <span>Movies</span>
-                    <span>Rating</span>
-                    <span>Contact</span>
+            <Col lg={3}>
+                <Row justify="end" style={{ marginBottom: '1rem' }}>
+                    <Col xl={2}>About</Col>
+                    <Col xl={2}>Movies</Col>
+                    <Col xl={2}>Rating</Col>
+                    <Col xl={2}>Contact</Col>
                 </Row>
-                <Row align="end" justify="end">
+                <Row justify="end">
                     <div className="social">
-                        <Link href="/"><a className="facebook">facebook</a></Link>
-                        <Link href="/" className="pinterest"><a>pinterest</a></Link>
-                        <Link href="/" className="twitter"><a>twitter</a></Link>
-                        <Link href="/" className="linkedin"><a>linkedin</a></Link>
+                        <Link href="/">
+                            <a className="facebook"/>
+                        </Link>
+                        <Link href="/">
+                            <a className="pinterest"/>
+                        </Link>
+                        <Link href="/">
+                            <a className="twitter"/>
+                        </Link>
+                        <Link href="/">
+                            <a className="linkedin"/>
+                        </Link>
                     </div>
                 </Row>
             </Col>
         </Row>
-
         <style jsx>
             {`
         .social {
-          background-color: yellow;
           & > * {
-            width: 26px;
-            height: 30px;
+            width: 46px;
+            height: 42px;
             margin: 3px;
             background: url('images/social-links.svg') no-repeat;
             text-indent: -9999px;
             white-space: nowrap;
             color: var(--global-color-grey-light);
             cursor: pointer;
+            display: inline-block;
 
             &:hover {
               opacity: 0.5;
